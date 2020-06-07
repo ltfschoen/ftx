@@ -15,17 +15,63 @@ if __name__ == '__main__':
 
     obj = client.FtxClient(API_KEY, API_SECRET, SUBACCOUNT_NAME)
     # Refer to FTX REST API Docs https://docs.ftx.com/?python#account
-    print (obj.get_account_info())
+    # print (obj.get_account_info())
+    # print (obj.get_positions())
 
-    # Example. Refer to https://docs.ftx.com/?python#place-order
+    # obj.get_order_history(
+    #   market="FTT/USD",
+    # )
+
+    # obj.cancel_orders(
+    #   market_name="SHIT-PERP",
+    # )
+
     # obj.place_order(
-    #   market="BTC-PERP",
+    #   market="THETA-PERP",
     #   side="sell",
-    #   price=100000,
+    #   price=0.26660,
     #   type="limit",
-    #   size=1,
+    #   size=2000,
     #   reduce_only=False,
     #   ioc=False,
     #   post_only=False,
     #   client_id=None,
     # )
+
+    # Example. Refer to https://docs.ftx.com/?python#place-order
+    # obj.place_order(
+    #   market="SHIT-PERP",
+    #   side="buy",
+    #   price=890,
+    #   type="limit",
+    #   size=0.01,
+    #   reduce_only=False,
+    #   ioc=False,
+    #   post_only=False,
+    #   client_id=None,
+    # )
+
+    # # Refer to https://docs.ftx.com/?python#place-trigger-order
+    # obj.place_conditional_order(
+    #   market="SHIT-PERP",
+    #   side="sell",
+    #   trigger_price=889.1, # to send a stop market order
+    #   type="stop",
+    #   # limit_price=889.1, # to send a stop limit order, instead of market order
+    #   size=0.01,
+    #   reduce_only=False,
+    #   cancel=False, # cancel limit on trigger
+    #   trail_value=None, 
+    # )
+
+    obj.place_conditional_order(
+      market="SHIT-PERP",
+      side="sell",
+      trigger_price=891.1,
+      type="take_profit",
+      limit_price=891.1,
+      size=0.01,
+      reduce_only=False,
+      cancel=False,
+      trail_value=None, 
+    )

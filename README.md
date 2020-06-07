@@ -56,3 +56,5 @@ python3 main.py
 Add additional functionality to your script by updating /rest/main.py to otherwise interact with the FTX REST API https://docs.ftx.com/#rest-api. For example, if you've been trading as a "Machine" and have positions that are open through you creating and enabling different trading strategy rules in the Quant Zone https://ftx.com/quant-zone/rules, then to close one of your trades you'll have to place an order to close part or all of your position using the FTX REST API https://docs.ftx.com/?python#place-order, and call the `place_order` function in /rest/client.py. An example of a function call has been included in that file.
 
 The content provided in this repository is for informational purposes only, you should not construe any such information or other material as legal, tax, investment, financial, or other advice.
+
+Note: If you have a `Short` position, and you try to make a `Long` position of the same size to cancel the trade but you get error `Exception: Account does not have enough margin for order.`, then it may be because you have some open orders that you should first cancel with `cancel_orders` or similar.
