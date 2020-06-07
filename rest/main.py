@@ -26,43 +26,31 @@ if __name__ == '__main__':
     #   market_name="SHIT-PERP",
     # )
 
-    # obj.place_order(
-    #   market="THETA-PERP",
-    #   side="sell",
-    #   price=0.26660,
-    #   type="limit",
-    #   size=2000,
-    #   reduce_only=False,
-    #   ioc=False,
-    #   post_only=False,
-    #   client_id=None,
-    # )
-
     # Example. Refer to https://docs.ftx.com/?python#place-order
-    # obj.place_order(
-    #   market="SHIT-PERP",
-    #   side="buy",
-    #   price=890,
-    #   type="limit",
-    #   size=0.01,
-    #   reduce_only=False,
-    #   ioc=False,
-    #   post_only=False,
-    #   client_id=None,
-    # )
+    obj.place_order(
+      market="SHIT-PERP",
+      side="buy",
+      price=890,
+      type="limit",
+      size=0.01,
+      reduce_only=False,
+      ioc=False,
+      post_only=False,
+      client_id=None,
+    )
 
-    # # Refer to https://docs.ftx.com/?python#place-trigger-order
-    # obj.place_conditional_order(
-    #   market="SHIT-PERP",
-    #   side="sell",
-    #   trigger_price=889.1, # to send a stop market order
-    #   type="stop",
-    #   # limit_price=889.1, # to send a stop limit order, instead of market order
-    #   size=0.01,
-    #   reduce_only=False,
-    #   cancel=False, # cancel limit on trigger
-    #   trail_value=None, 
-    # )
+    # Refer to https://docs.ftx.com/?python#place-trigger-order
+    obj.place_conditional_order(
+      market="SHIT-PERP",
+      side="sell",
+      trigger_price=889.1, # to send a stop market order
+      type="stop",
+      # limit_price=889.1, # to send a stop limit order, instead of market order
+      size=0.01,
+      reduce_only=False,
+      cancel=False, # cancel limit on trigger
+      trail_value=None, 
+    )
 
     obj.place_conditional_order(
       market="SHIT-PERP",
